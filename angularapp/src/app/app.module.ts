@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GetPlayerComponent } from './get-player/get-player.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GetPlayerComponent
+    GetPlayerComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

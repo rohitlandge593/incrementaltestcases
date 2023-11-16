@@ -9,7 +9,8 @@ import { IplService } from '../ipl.service';
 export class GetPlayerComponent implements OnInit {
   playerdata:any[]=[]
   constructor(private service:IplService) {
-    this.service.getAllPlayers().subscribe(data=>{this.})
+    this.service.getAllPlayers().subscribe(data=>{this.playerdata.push(...data)})
+    console.log(this.playerdata);
    }
 
   ngOnInit(): void {

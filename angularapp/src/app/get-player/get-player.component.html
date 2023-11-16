@@ -4,16 +4,20 @@
     <table class="table">
         <thead>
             <th>Id</th>
+            <th>Age</th>
             <th>Name</th>
-            <th>Rating</th>
-            <th>Year</th>
+            <th>TeamId</th>
+            <th>Category</th>
+            <th>BiddingPrice</th>
         </thead>
         <tbody>
-            <tr *ngFor="let m of moviedata">
-            <td>{{m.id}}</td>
-            <td>{{m.name}}</td>
-            <td>{{m.yearRelease}}</td>
-            <td>{{m.rating}}</td>
+            <tr *ngFor="let m of playerdata">
+            <td>{{m.Id}}</td>
+            <td>{{m.Age}}</td>
+            <td>{{m.Name}}</td>
+            <td>{{m.TeamId}}</td>
+            <td>{{m.Category}</td>
+            <td>{{m.BiddingPrice}</td>
         </tr>
     </tbody>
     </table>
