@@ -24,14 +24,14 @@ namespace dotnetapp.Controllers
 
         [HttpGet]
         [Route("GetPlayer")]
-        public IActionResult Get()
+        public IActionResult GetPlayers()
         {
             var playerList = _context.Players.ToList();
             return Ok(playerList);
         }
         [HttpPost]
         [Route("Post")]
-        public IActionResult Post(Player player)
+        public IActionResult PostPlayers(Player player)
         {
             _context.Players.Add(player);
             _context.SaveChanges();
@@ -44,6 +44,34 @@ namespace dotnetapp.Controllers
             var teamList= _context.Teams.ToList();
             return Ok(teamList);
         }
+        [HttpPost]
+        [Route("PostTeams")]
+        public IActionResult PostTeams(Team team)
+        {
+            _context.Teams.Add(team);
+            _context.SaveChanges();
+            return Ok();
+        }
+        [Route("{id}")]
+        [HttpPut]            
+        public IActionResult Put(int id,Employee empl)
+        {
+            var empEdit=db.Employees.Find(id);
+            if(empEdit!=null)
+            {
+                empEdit.EmployeeName=empl.EmployeeName;
+                empEdit.Salary=empl.Salary;
+                db.Update(empEdit);
+                db.SaveChanges();
+                return Ok();
+            }
+            else  
+                return NotFound();  
+
+            // db.Update(empl);
+            // db.SaveChanges();            
+
+         }
 
         
     }
