@@ -52,24 +52,23 @@ namespace dotnetapp.Controllers
             _context.SaveChanges();
             return Ok();
         }
-        [Route("{id}")]
+        
+        [Route("PutTeam")]
         [HttpPut]            
-        public IActionResult Put(int id,Employee empl)
+        public IActionResult PutTeam(int id,Team team)
         {
-            var empEdit=db.Employees.Find(id);
-            if(empEdit!=null)
+            var teamList=_context.Teams.Find(id);
+            if(teamList!=null)
             {
-                empEdit.EmployeeName=empl.EmployeeName;
-                empEdit.Salary=empl.Salary;
-                db.Update(empEdit);
-                db.SaveChanges();
+                teamList.Name=team.Name;
+                _context.Update(teamList);
+                _context.SaveChanges();
                 return Ok();
             }
             else  
                 return NotFound();  
 
-            // db.Update(empl);
-            // db.SaveChanges();            
+            // db.Update(teamList         // db.SaveChanges();            
 
          }
 
