@@ -18,12 +18,14 @@ namespace dotnetapp.Controllers
         }
 
         [HttpGet]
+        [Route("list")]
         public IActionResult Get()
         {
             var playerList = db.Players.ToList();
             return Ok(playerList);
         }
         [HttpPost]
+        [Route("player")]
         public IActionResult Post(Player player)
         {
             db.Players.Add(player);
