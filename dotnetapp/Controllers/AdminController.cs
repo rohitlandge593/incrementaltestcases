@@ -30,13 +30,36 @@ namespace dotnetapp.Controllers
             return Ok(playerList);
         }
         [HttpPost]
-        [Route("Post")]
+        [Route("PostPlayers")]
         public IActionResult PostPlayers(Player player)
         {
             _context.Players.Add(player);
             _context.SaveChanges();
-            return CreatedAtAction("Get",new {id=player.Id},player);
-        } 
+            return Ok();
+        }
+
+        [Route("PutPlayer")]
+        [HttpPut]            
+        public IActionResult PutPlayer(int id,Player player)
+        {
+            var playerList=_context.Players.Find(id);
+            if(playerList!=null)
+            {
+                playerList.Age=player.Age;
+                playerList.Name=player.Name;
+                playerList.TeamId=player.TeamId;
+                playerList.Category=player.Category;
+                playerList.BiddingPrice=player.BiddingPrice;
+                _context.Update(playerList);
+                _context.SaveChanges();
+                return Ok();
+            }
+            else  
+                return NotFound();            
+
+         } 
+
+
         [HttpGet]
         [Route("GetTeams")]
         public IActionResult GetTeams()
