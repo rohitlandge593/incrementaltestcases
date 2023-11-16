@@ -59,6 +59,22 @@ namespace dotnetapp.Controllers
 
          } 
 
+        [HttpDelete]
+        [Route("DeletePlayer")]
+        public IActionResult DeletePlayer(int id)
+        {
+            var playerList=_context.Players.Find(id);
+            if(playerList!=null)
+            {
+                _context.Players.Remove(playerList);
+                _context.SaveChanges();
+                return Ok();
+            }
+            else
+                return NotFound();
+        }
+
+
 
         [HttpGet]
         [Route("GetTeams")]
@@ -94,6 +110,21 @@ namespace dotnetapp.Controllers
             // db.Update(teamList         // db.SaveChanges();            
 
          }
+
+        [HttpDelete]
+        [Route("DeleteTeam")]
+        public IActionResult DeleteTeam(int id)
+        {
+            var teamList=_context.Teams.Find(id);
+            if(teamList!=null)
+            {
+                _context.Teams.Remove(teamList);
+                _context.SaveChanges();
+                return Ok();
+            }
+            else
+                return NotFound();
+        }
 
         
     }
