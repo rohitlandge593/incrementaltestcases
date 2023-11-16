@@ -1,6 +1,9 @@
-using System;
-using dotnetapp.Models;
 using Microsoft.EntityFrameworkCore;
+using dotnetapp.Models;
+using Microsoft.AspNetCore.Cors;
+
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -9,7 +12,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<ApplicationDbContext>(options=>{options.UseSqlServer(builder.Configuration.GetConnectionString("connStr"));});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -24,8 +27,5 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Employee}/{action=Index}/{id?}");
 
 app.Run();
