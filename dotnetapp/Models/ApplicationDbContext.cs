@@ -9,6 +9,7 @@ namespace dotnetapp.Models
             : base(options)
         {
         }
+        public ApplicationDbContext(){}
         public DbSet<Player> Players{get;set;}
         public DbSet<Team> Teams{get;set;}
         public DbSet<User> Users{get;set;}
