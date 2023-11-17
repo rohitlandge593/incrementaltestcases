@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IplService } from '../ipl.service';
+import { Router } from '@angular/router';
+import { IPlayer } from '../Model/iplayer';
 
 @Component({
   selector: 'app-addplayer',
@@ -7,18 +9,20 @@ import { IplService } from '../ipl.service';
   styleUrls: ['./addplayer.component.css']
 })
 export class AddplayerComponent implements OnInit {
-  age:number
-  name:string
-  teamId:number
-  category:string
-  biddingPrice:number
 
-  constructor(private service:IplService) { }
-  handleSave()
+  playerdata:IPlayer={Id:0,Age:0,Name:"",TeamId:0,Category:"",BiddingPrice:0}
+  constructor(private service:IplService, private route:Router) { }
+  saveData(player:IPlayer):void
     {
-        let data: object={age:this.age, name:this.name, departmentId:this.departmentId, designationId: this.designationId}
-        console.log(this.service.addPlayers(data));
+
+        this.playerdata=player
+        this.service.addPlayers(this.playerdata).subscribe(()=>
+        {
+          alert('Record Added')
+          this.route.navigate(['/getplayers'])
+      })
     }
+
 
   ngOnInit(): void {
   }

@@ -29,10 +29,25 @@ namespace dotnetapp.Controllers
             var playerList = _context.Players.ToList();
             return Ok(playerList);
         }
+
+        [HttpGet]
+        [Route("GetPlayer/id")]
+        public IActionResult GetPlayers(int id)
+        {
+            var playerList= _context.Players.FirstOrDefault(a=>a.Id==id);
+            if(playerList!=null)
+            {
+                return Ok(playerList);
+            }
+            else{
+                return NotFound();
+            }
+        }
         [HttpPost]
         [Route("PostPlayers")]
         public IActionResult PostPlayers(Player player)
         {
+            
             _context.Players.Add(player);
             _context.SaveChanges();
             return Ok();

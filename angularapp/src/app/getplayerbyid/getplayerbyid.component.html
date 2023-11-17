@@ -1,0 +1,23 @@
+<!-- <h3>Player Details of {{playerdata.Name}}</h3>
+<p></p>
+<p><b>ID</b></p> &nbsp;&nbsp;&nbsp;{{playerdata.Id}}
+<p><b>Age</b></p> &nbsp;&nbsp;&nbsp;{{playerdata.Age}}
+<p><b>Name</b></p> &nbsp;&nbsp;&nbsp;{{playerdata.Name}}
+<p><b>TeamId</b></p> &nbsp;&nbsp;&nbsp;{{playerdata.TeamId}}
+<p><b>Category</b></p> &nbsp;&nbsp;&nbsp;{{playerdata.Category}}
+<p><b>BiddingPrice</b></p> &nbsp;&nbsp;&nbsp;{{playerdata.BiddingPrice}} -->
+
+<div>
+    <label for="id">Player ID:</label>
+    <input type="number" id="id" [(ngModel)]="id" />
+    <button (click)="getPlayerDetails()">Get Player Details</button>
+</div>
+
+<div *ngIf="playerdata">
+    <h2>Player Details</h2>
+    <p>Id: {{playerdata.Id}}</p>
+    <p>Age: {{playerdata.Age}}</p>
+    <p>Name: {{playerdata.Name}}</p>
+    <p>TeamId: {{playerdata.TeamId}}</p>
+    <p>Category: {{playerdata.Category}}</p>
+    <p>BiddingPrice:{{playerdata.BiddingPrice}}</p>

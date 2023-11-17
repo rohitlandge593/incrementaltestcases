@@ -1,26 +1,27 @@
-<div>
- 
+
+<form (ngSubmit)="saveData(playerdata)" #playerform="ngForm">
     <div>
         <p>Enter Player Age</p>
-        <input [(ngModel)]="age" type="text">
+        <input [(ngModel)]="playerdata.Age" type="text">
     </div>
     <div>
         <p>Enter Player Name</p>
-        <input [(ngModel)]="name" type="text">
+        <input [(ngModel)]="playerdata.Name" type="text">
     </div>
     <div>
         <p>Enter TeamId</p>
-        <input [(ngModel)]="teamId" type="text">
+        <input [(ngModel)]="playerdata.TeamId" type="text">
     </div>
     <div>
         <p>Enter Category</p>
-        <input [(ngModel)]="category" type="text">
+        <input [(ngModel)]="playerdata.Category" type="text">
     </div>
     <div>
-        <p>Enter BiddingPrice/p>
-        <input [(ngModel)]="biddingPrice" type="text">
+        <p>Enter BiddingPrice</p>
+        <input [(ngModel)]="playerdata.BiddingPrice" type="text">
     </div>
     <div>
-        <button (click)="handleSave()">Save</button>
+        <input type="submit" class="btn btn-primary" value="Add Player" [disabled]="!playerform.valid">
  
 </div>
+</form>

@@ -8,18 +8,27 @@ import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './menu/menu.component';
 import { AddplayerComponent } from './addplayer/addplayer.component';
 import { IplService } from './ipl.service';
+import { FormsModule } from '@angular/forms';
+import { PutplayerComponent } from './putplayer/putplayer.component';
+import { GetplayerbyidComponent } from './getplayerbyid/getplayerbyid.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
     GetPlayerComponent,
     MenuComponent,
-    AddplayerComponent
+    AddplayerComponent,
+    PutplayerComponent,
+    GetplayerbyidComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    RouterModule
   ],
   providers: [IplService],
   bootstrap: [AppComponent]
