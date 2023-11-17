@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import{ HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { IPlayer } from './Model/iplayer';
 
 @Injectable({
   providedIn: 'root'
@@ -27,10 +28,10 @@ export class IplService {
  
   }
 
-  getAllPlayers():Observable<any[]>
+  getAllPlayers():Observable<IPlayer>
   {
     
-    return this.http.get<any[]>(this.url)
+    return this.http.get<IPlayer>(this.url)
   }
   updatePlayer(id:number,data:any)
   {
