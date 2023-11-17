@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IplService } from '../ipl.service';
+import { IPlayer } from '../Model/iplayer';
 
 @Component({
   selector: 'app-get-player',
@@ -7,12 +8,12 @@ import { IplService } from '../ipl.service';
   styleUrls: ['./get-player.component.css']
 })
 export class GetPlayerComponent implements OnInit {
-  playerdata:any[]=[]
+  playerdata:IPlayer[]=[]
   constructor(private service:IplService) {
     //
-    this.playerdata[0] = this.service.getAllPlayers()
-    //this.service.getAllPlayers().subscribe(data=>{this.playerdata.push(...data)})
-    console.log(this.playerdata[0]);
+    //this.playerdata[0] = this.service.getAllPlayers()
+    this.service.getAllPlayers().subscribe(data=>{this.playerdata.push(...data)})
+    console.log(this.playerdata);
    }
 
   ngOnInit(): void {

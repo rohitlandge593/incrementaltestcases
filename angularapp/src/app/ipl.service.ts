@@ -28,10 +28,10 @@ export class IplService {
  
   }
 
-  getAllPlayers():Observable<IPlayer>
+  getAllPlayers():Observable<IPlayer[]>
   {
     
-    return this.http.get<IPlayer>(this.url)
+    return this.http.get<IPlayer[]>(this.url)
   }
   updatePlayer(id:number,data:any)
   {
