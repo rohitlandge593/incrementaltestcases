@@ -27,12 +27,10 @@ export class IplService {
  
   }
 
-  getAllPlayers(data:any):Observable<any[]>
+  getAllPlayers():Observable<any[]>
   {
-    let httpHeaders:HttpHeaders = new HttpHeaders({
-      Accept:'application/json'
-    })
-    return this.http.get<any[]>(this.url,data)
+    
+    return this.http.get<any[]>(this.url)
   }
   updatePlayer(id:number,data:any)
   {
