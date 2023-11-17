@@ -1,27 +1,27 @@
-
+<div class="container jumbotron">
 <form (ngSubmit)="saveData(playerdata)" #playerform="ngForm">
-    <div>
-        <p>Enter Player Age</p>
-        <input [(ngModel)]="playerdata.Age" type="text">
+    <div class="form-group">
+        <label for="age">Age</label>
+        <input [(ngModel)]="playerdata.Age" type="text" id="age" name="age" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input [(ngModel)]="playerdata.Name" type="text" id="name" name="name" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="teamId">Team Id</label>
+        <input [(ngModel)]="playerdata.TeamId" type="text" id="teamId" name="teamId" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="category">Category</label>
+        <input [(ngModel)]="playerdata.Category" type="text" id="category" name="category" class="form-control">
     </div>
     <div>
-        <p>Enter Player Name</p>
-        <input [(ngModel)]="playerdata.Name" type="text">
+        <label for="biddingPrice">Bidding Price</label>
+        <input [(ngModel)]="playerdata.BiddingPrice" type="text" id="biddingPrice" name="biddingPrice" class="form-control">
     </div>
     <div>
-        <p>Enter TeamId</p>
-        <input [(ngModel)]="playerdata.TeamId" type="text">
-    </div>
-    <div>
-        <p>Enter Category</p>
-        <input [(ngModel)]="playerdata.Category" type="text">
-    </div>
-    <div>
-        <p>Enter BiddingPrice</p>
-        <input [(ngModel)]="playerdata.BiddingPrice" type="text">
-    </div>
-    <div>
-        <input type="submit" class="btn btn-primary" value="Add Player" [disabled]="!playerform.valid">
- 
+        <input type="submit" class="btn btn-primary" value="Add Player" />
+ </div>
 </div>
 </form>
