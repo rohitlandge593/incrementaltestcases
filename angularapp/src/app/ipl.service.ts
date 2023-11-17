@@ -9,6 +9,24 @@ export class IplService {
   private url='https://8081-afdcbdaefbcfacbbecabcdadeafbbdcaeafe.premiumproject.examly.io/api/Admin/GetPlayer';
 
   constructor(private http:HttpClient) { }
+
+  addPlayers(data:any)
+  {
+    let responseData:any="";
+    let httpheaders:HttpHeaders = new HttpHeaders({
+      Accept:'application/json'
+    })
+    this.http.post(this.url,data,{headers:httpheaders})
+        .subscribe(res=>{
+            responseData=res;
+        },
+        err=>{
+            responseData=err;
+        })
+        return responseData;
+ 
+  }
+
   getAllPlayers():Observable<any[]>
   {
     let httpHeaders:HttpHeaders = new HttpHeaders({
