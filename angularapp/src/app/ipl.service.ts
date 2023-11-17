@@ -11,7 +11,21 @@ export class IplService {
   constructor(private http:HttpClient) { }
   getAllPlayers():Observable<any[]>
   {
+    let httpHeaders:HttpHeaders = new HttpHeaders({
+      Accept:'application/json'
+    })
     return this.http.get<any[]>(this.url+'/GetPlayer')
   }
-  
+  updatePlayer(id:number,data:any)
+  {
+
+  }
+  deletePlayer(id:number)
+  {
+
+  }
+  getPlayerById(id:number)
+  {
+
+  }
 }
