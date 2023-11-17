@@ -18,7 +18,7 @@ export class IplService {
   }
   updatePlayer(id:number,data:any)
   {
-
+    
   }
   deletePlayer(id:number)
   {
