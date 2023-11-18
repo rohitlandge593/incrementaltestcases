@@ -31,7 +31,7 @@ namespace dotnetapp.Controllers
         }
 
         [HttpGet]
-        [Route("GetPlayer/id")]
+        [Route("GetPlayer/{id}")]
         public IActionResult GetPlayers(int id)
         {
             var playerList= _context.Players.FirstOrDefault(a=>a.Id==id);
