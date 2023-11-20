@@ -17,6 +17,11 @@ namespace dotnetapp.Controllers
             _context = context;
         }
 
+        public User Register()
+        {
+            return null;
+        }
+
         
     }
 }

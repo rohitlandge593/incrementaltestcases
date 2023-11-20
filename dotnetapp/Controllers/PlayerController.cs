@@ -16,10 +16,7 @@ namespace dotnetapp.Controllers
         {
             this.db=context;
         }
-        public User Register()
-        {
-            return null;
-        }
+        
 
         
     }
