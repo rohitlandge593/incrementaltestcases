@@ -13,15 +13,15 @@ export class GetplayerbyidComponent implements OnInit {
 
   playerdata:IPlayer ={Id:0,Name:'',Age:0,TeamId:0,Category:'',BiddingPrice:0};
   
-  id:any
+  id:number
   isReady = false;
  
   constructor(private service:IplService, private ar:ActivatedRoute) { }
 
-  getPlayerDetails(p:IPlayer){
-    
-   // this.id=playerform.controls['id'].value;
-    this.service.getPlayerById(p.Id).subscribe(data=>{
+  getPlayerDetails(p:NgForm){
+    // const tid=this.ar.snapshot.paramMap.get('id')
+   this.id=p.value;
+    this.service.getPlayerById(this.id).subscribe(data=>{
       this.playerdata=data; 
       this.isReady= true;
       console.log(this.playerdata);
