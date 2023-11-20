@@ -18,9 +18,9 @@ export class GetplayerbyidComponent implements OnInit {
   constructor(private service:IplService, private ar:ActivatedRoute) { }
 
   getPlayerDetails(p:IPlayer){
-    const tid=this.ar.snapshot.paramMap.get('id')
-    this.id=Number(tid)
-   // this.id=playerform.controls['id'].value;
+    // const tid=this.ar.snapshot.paramMap.get('Id')
+    // this.id=Number(tid)
+   //this.id=playerform.controls['id'].value;
     this.service.getPlayerById(this.id).subscribe((data:IPlayer)=>{
       this.playerdata=data; 
       this.isReady= true;
