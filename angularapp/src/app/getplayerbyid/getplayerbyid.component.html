@@ -1,8 +1,8 @@
 
-<form #playerform="ngForm" (ngSubmit)="getPlayerDetails(playerform)">
+<form #playerform="ngForm" (ngSubmit)="getPlayerDetails(playerdata)">
 <div>
     <label for="id">Player ID:</label>
-    <input type="number" id="id" name="id" [(ngModel)]="id" />
+    <input type="number" id="id" name="id" [(ngModel)]="playerdata.id"/>
     <button type="submit">Submit</button>
 </div>
 </form>
