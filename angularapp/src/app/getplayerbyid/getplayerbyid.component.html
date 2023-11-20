@@ -6,18 +6,23 @@
 <p><b>TeamId</b></p> &nbsp;&nbsp;&nbsp;{{playerdata.TeamId}}
 <p><b>Category</b></p> &nbsp;&nbsp;&nbsp;{{playerdata.Category}}
 <p><b>BiddingPrice</b></p> &nbsp;&nbsp;&nbsp;{{playerdata.BiddingPrice}} -->
-
+<form #playerform="ngForm" (ngSubmit)="getPlayerDetails(playerform)">
 <div>
     <label for="id">Player ID:</label>
-    <input type="number" id="id" [(ngModel)]="id" />
-    <button (click)="getPlayerDetails()">Get Player Details</button>
+    <input type="number" id="id" name="id" [(ngModel)]="id" />
+    <button type="submit">Submit</button>
 </div>
+</form>
 
-<div *ngIf="playerdata">
-    <h2>Player Details</h2>
+<div *ngIf="isReady">
+    <div class="container col-4">
+    <h2 style="text-align:center">Player Details</h2>
+
     <p>Id: {{playerdata.Id}}</p>
     <p>Age: {{playerdata.Age}}</p>
     <p>Name: {{playerdata.Name}}</p>
     <p>TeamId: {{playerdata.TeamId}}</p>
     <p>Category: {{playerdata.Category}}</p>
     <p>BiddingPrice:{{playerdata.BiddingPrice}}</p>
+    </div>
+</div>
