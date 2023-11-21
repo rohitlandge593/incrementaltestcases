@@ -44,4 +44,5 @@ export class IplService {
   {
     return this.http.get<IPlayer>(this.url+'/GetPlayer/'+id)
   }
+  
 }
