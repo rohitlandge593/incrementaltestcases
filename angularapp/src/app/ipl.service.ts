@@ -36,7 +36,7 @@ export class IplService {
 
   deletePlayer(id:number,playerdata:IPlayer):Observable<IPlayer>
   {
-    return this.http.delete<IPlayer>(this.url+'/DeletePlayer/'+id,playerdata,this.httpOptions)
+    return this.http.delete<IPlayer>(this.url+'/DeletePlayer/'+id)
   }
 
 

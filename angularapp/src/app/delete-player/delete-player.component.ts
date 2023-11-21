@@ -24,7 +24,10 @@ export class DeletePlayerComponent implements OnInit {
 
   deletePlayerData(player:IPlayer)
   {
-    this.service.deletePlayer(this.id,player)
+    this.service.deletePlayer(this.id,player).subscribe(()=>{
+      alert("Record deleted")
+      this.route.navigate(['/getplayers'])
+    })
   }
 
   ngOnInit(): void {
