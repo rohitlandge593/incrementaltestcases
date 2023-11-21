@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { PutplayerComponent } from './putplayer/putplayer.component';
 import { GetplayerbyidComponent } from './getplayerbyid/getplayerbyid.component';
 import { RouterModule } from '@angular/router';
+import { DeletePlayerComponent } from './delete-player/delete-player.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { RouterModule } from '@angular/router';
     AddplayerComponent,
     PutplayerComponent,
     GetplayerbyidComponent,
+    DeletePlayerComponent,
     
   ],
   imports: [

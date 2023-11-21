@@ -27,16 +27,16 @@ export class IplService {
 
 
   
-  editPlayer(playerdata:IPlayer):Observable<IPlayer>
+  editPlayer(id:number,playerdata:IPlayer):Observable<IPlayer>
   {
-    return this.http.put<IPlayer>(this.url+'/PutPlayer/'+playerdata.Id,playerdata,this.httpOptions)
+    return this.http.put<IPlayer>(this.url+'/PutPlayer/'+id,playerdata,this.httpOptions)
   }
   
 
 
-  deletePlayer(id:number)
+  deletePlayer(id:number,playerdata:IPlayer):Observable<IPlayer>
   {
-
+    return this.http.delete<IPlayer>(this.url+'/DeletePlayer/'+id,playerdata,this.httpOptions)
   }
 
 

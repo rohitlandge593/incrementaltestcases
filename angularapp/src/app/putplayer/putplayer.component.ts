@@ -29,7 +29,7 @@ export class PutplayerComponent implements OnInit {
   editPlayerData(player:IPlayer)
   {
     this.playerdata=player
-    this.service.editPlayer(player).subscribe(()=>
+    this.service.editPlayer(this.id,player).subscribe(()=>
     {
       alert('Record Edited')
       this.route.navigate(['/getplayers'])
