@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="jumbotron">
+        <h3 style="text-align: center;">Teams</h3>
+        <table class="table">
+            <thead>
+                <tr>
+
+                    <th><b>TeamID</b></th>
+                    <th><b>TeamName</b></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let m in teamdata">
+                    <td>{{m.TeamId}}</td>
+                    <td>{{m.Name}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

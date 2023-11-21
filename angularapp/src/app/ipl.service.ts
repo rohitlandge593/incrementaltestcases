@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import{ HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IPlayer } from './Model/iplayer';
+import { ITeam } from './Model/iteam';
 
 @Injectable({
   providedIn: 'root'
@@ -44,5 +45,10 @@ export class IplService {
   {
     return this.http.get<IPlayer>(this.url+'/GetPlayer/'+id)
   }
-  
+
+  getTeams():Observable<ITeam[]>
+  {
+    return this.http.get<ITeam[]>(this.url+'/GetTeams')
+  }
+
 }
