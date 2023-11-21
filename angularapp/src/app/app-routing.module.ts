@@ -7,6 +7,7 @@ import { PutplayerComponent } from './putplayer/putplayer.component';
 import { DeletePlayerComponent } from './delete-player/delete-player.component';
 import { GetTeamsComponent } from './get-teams/get-teams.component';
 import { AddteamsComponent } from './addteams/addteams.component';
+import { EditteamsComponent } from './editteams/editteams.component';
 
 const routes: Routes = [
   {path:'getplayers', component:GetPlayerComponent},
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path:'editplayer/:id', component:PutplayerComponent},
   {path:'deleteplayer/:id', component:DeletePlayerComponent},
   {path:'getTeams', component:GetTeamsComponent},
-  {path:'addTeams', component:AddteamsComponent}
+  {path:'addTeams', component:AddteamsComponent},
+  {path:'editTeams', component:EditteamsComponent}
 ];
 
 @NgModule({
