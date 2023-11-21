@@ -16,9 +16,9 @@ export class GetTeamsComponent implements OnInit {
     this.service.getTeams().subscribe(data=>this.teamdata.push(...data))
   }
 
-  editData():void 
+  editData(id:number):void 
   {
-    this.route.navigate(['/editTeams'])
+    this.route.navigate(['/editTeams/+id])
   }
 
   ngOnInit(): void {

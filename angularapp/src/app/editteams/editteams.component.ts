@@ -11,15 +11,18 @@ import { ITeam } from '../Model/iteam';
 })
 export class EditteamsComponent implements OnInit {
 
-  teamdata:ITeam
-  id:number
+  teamdata:ITeam={TeamId:0,Name:''}
+  TeamId:number
 
   constructor(private service:IplService,private route:Router) { }
 
   editTeamData(team:ITeam)
   {
     this.teamdata=team
-    this.service.editTeams(this.id,team).subscribe((data:ITeam)=>{this.teamdata=data})
+    this.service.editTeams(this.TeamId,team).subscribe(()=>{
+      alert("Record Edited")
+      this.route.navigate(['/getTeams'])
+    })
   }
 
   ngOnInit(): void {
