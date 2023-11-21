@@ -61,4 +61,9 @@ export class IplService {
     return this.http.put<ITeam>(this.url+'/PutTeam/'+id,teamdata,this.httpOptions)
   }
 
+  deleteTeams(id:number):Observable<ITeam>
+  {
+    return this.http.delete<ITeam>(this.url+'DeleteTeam/'+id)
+  }
+
 }

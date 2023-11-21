@@ -18,8 +18,13 @@ export class GetTeamsComponent implements OnInit {
 
   editData(id:number):void 
   {
-    console.log('Route'+id)
+    //console.log('Route'+id)
     this.route.navigate(['/editTeams/'+id])
+  }
+
+  deleteData(id:number):void 
+  {
+    this.route.navigate(['deleteTeams/'+id])
   }
 
   ngOnInit(): void {

@@ -7,7 +7,8 @@
 
                     <th><b>TeamID</b></th>
                     <th><b>TeamName</b></th>
-                    <th><b>Actions</b></th>
+                    <th><b>Edit Actions</b></th>
+                    <th><b>Delete Action</b></th>
                 </tr>
             </thead>
             <tbody>
@@ -15,7 +16,11 @@
                     <td>{{m.teamId}}</td>
                     <td>{{m.name}}</td>
                     <td>
-                        <input type="submit" id="buttonteamId" (click)="editData(m.teamId)" value="Edit">
+                        <input type="submit" id="buttonteamId" (click)="editData(m.teamId)" value="Edit" class="btn btn-primary">
+                    </td>
+                    <td>
+                        <input type="submit" id="deletebutton" (click)="deleteData(m.teamId)" vlaue="Delete" class="btn btn-danger">
+                    </td>
                 </tr>
             </tbody>
         </table>
