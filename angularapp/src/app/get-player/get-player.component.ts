@@ -8,10 +8,11 @@ import { IPlayer } from '../Model/iplayer';
   styleUrls: ['./get-player.component.css']
 })
 export class GetPlayerComponent implements OnInit {
+  
   playerdata:IPlayer[]=[]
+
   constructor(private service:IplService) {
-    //
-    //this.playerdata[0] = this.service.getAllPlayers()
+   
     this.service.getAllPlayers().subscribe(data=>{this.playerdata.push(...data)})
     console.log(this.playerdata);
    }
