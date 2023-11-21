@@ -1,23 +1,43 @@
-<form #playerform="ngForm" (ngSubmit)="editPlayer(playerdata)"></form>
+<form #playerform="ngForm" (ngSubmit)="editPlayer(playerdata)">
     <div>
         <label for="id" >Player ID:</label>
         <input type="number" id="id" name="id" [(ngModel)]="id" />
         <button type="submit">Submit</button>
     </div>
 </form>
-
+<div class="container jumbotron col-4">
 <form #editplayerform="ngForm" (ngSubmit)="editPlayerData(playerdata)" >
 <div *ngIf="isReady">
     
-    <div class="container col-4">
+    
         
             <div class="form-group">
-                <label for="id">Age</label>
-                <input type="text" id="age" name="age"  [(ngModel)]="playerdata.age">
+                <label for="age">Age</label>
+                <input type="text" id="age" name="age"  [(ngModel)]="playerdata.age" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" [(ngModel)]="playerdata.name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="teamId">TeamId</label>
+                <input type="text" id="teamId" name="teamId" [(ngModel)]="playerdata.teamId" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="category">Category</label>
+                <input type="text" id="category" name="category" [(ngModel)]="playerdata.category" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="biddingPrice">BiddingPrice</label>
+                <input type="text" id="biddingPrice" name="biddingPrice" [(ngModel)]="playerdata.biddingPrice" class="form-control">
+            </div>
+            <div>
+                <input type="submit" value="Edit Player">
             </div>
         
         
-    </div>
-
 </div>
+
+
 </form>
+</div>

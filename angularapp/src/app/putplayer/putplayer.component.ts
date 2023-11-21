@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IplService } from '../ipl.service';
 import { Router } from '@angular/router';
 import { IPlayer } from '../Model/iplayer';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-putplayer',
