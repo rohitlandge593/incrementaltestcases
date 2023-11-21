@@ -29,7 +29,7 @@ export class IplService {
   
   editPlayer(playerdata:IPlayer):Observable<IPlayer>
   {
-    return this.http.put<IPlayer>(this.url+'/PutPlayer/'+playerdata.Id,playerdata,this.httpOptions)
+    return this.http.put<IPlayer>(this.url+'/PutPlayer',playerdata,this.httpOptions)
   }
   
 

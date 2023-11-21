@@ -14,7 +14,7 @@ export class PutplayerComponent implements OnInit {
   constructor(private service:IplService,private route:Router) { }
 
   isReady=false
-  playerdata:IPlayer
+  playerdata:IPlayer={Id:0,Age:0,Name:"",TeamId:0,Category:"",BiddingPrice:0}
   id:number
 
   editPlayer(p:IPlayer)
