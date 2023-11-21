@@ -16,7 +16,7 @@ namespace dotnetapp.Controllers
         {
             _context = context;
         }
-
+        [HttpGet]
         public User Register()
         {
             return null;
