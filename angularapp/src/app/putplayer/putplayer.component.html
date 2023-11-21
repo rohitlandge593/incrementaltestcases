@@ -8,11 +8,12 @@
 
 <div *ngIf="isReady">
     <div class="container col-4">
-        @using(Html.BeginForm())
-        {
-            <div class="form-group">
-                
+        <form #editplayerform="ngForm" (ngSubmit)="editPlayerData(playerdata)" >
+            <div>
+                <label for="id">Age</label>
+                <input type="text" id="age" name="age" readonly [(ngModel)]="playerdata.age">
             </div>
-        }
+        </form>
+        
     </div>
 </div>

@@ -25,6 +25,12 @@ export class PutplayerComponent implements OnInit {
     })
   }
 
+  editPlayerData(player:IPlayer)
+  {
+    this.playerdata=player
+    this.service.editPlayer(this.playerdata).subscribe(data=>)
+  }
+
   ngOnInit(): void {
   }
 
