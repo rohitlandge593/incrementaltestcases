@@ -11,7 +11,9 @@ import { IPlayer } from '../Model/iplayer';
 export class AddplayerComponent implements OnInit {
 
   playerdata:IPlayer={Id:0,Age:0,Name:"",TeamId:0,Category:"",BiddingPrice:0}
+
   constructor(private service:IplService, private route:Router) { }
+  
   saveData(player:IPlayer):void
     {
 

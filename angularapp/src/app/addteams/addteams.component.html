@@ -4,7 +4,10 @@
         <form #addteamForm="ngForm" (ngSubmit)="addTeamData(teamdata)">
         <div class="form-group">
             <label>Team Name</label>
-            <input type="text" [(ngModel)]="teamdata.name" class="form-control">
+            <input type="text" name="name" id="name" [(ngModel)]="teamdata.Name" class="form-control">
+        </div>
+        <div>
+            <input type="submit" value="Add Team" />
         </div>
         </form>
     </div>

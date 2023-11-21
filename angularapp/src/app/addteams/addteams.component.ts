@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ITeam } from '../Model/iteam';
 import { Router } from '@angular/router';
+import { IplService } from '../ipl.service';
 
 @Component({
   selector: 'app-addteams',
@@ -9,13 +10,16 @@ import { Router } from '@angular/router';
 })
 export class AddteamsComponent implements OnInit {
 
-  teamdata:ITeam
+  teamdata:ITeam={TeamId:0,Name:''}
 
-  constructor(private service:ITeam,private route:Router) { }
+  constructor(private service:IplService,private route:Router) { }
 
   addTeamData(team:ITeam)
   {
-    this.service.
+    this.service.addTeams(this.teamdata).subscribe(()=>{
+      alert('Record added')
+      this.route.navigate(['/getTeams'])
+    })
   }
   
   ngOnInit(): void {
