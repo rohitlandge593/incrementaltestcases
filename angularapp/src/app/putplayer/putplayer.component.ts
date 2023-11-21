@@ -15,9 +15,9 @@ export class PutplayerComponent implements OnInit {
   playerdata:IPlayer
   id:number
 
-  getPlayerById(id:number)
+  editPlayer(p:IPlayer)
   {
-    this.service.getPlayerById
+    const tid=
   }
 
   ngOnInit(): void {
