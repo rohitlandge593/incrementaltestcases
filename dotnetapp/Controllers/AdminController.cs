@@ -53,7 +53,7 @@ namespace dotnetapp.Controllers
             return Ok();
         }
 
-        [Route("PutPlayer")]
+        [Route("PutPlayer/{id}")]
         [HttpPut]            
         public IActionResult PutPlayer(int id,Player player)
         {
@@ -75,7 +75,7 @@ namespace dotnetapp.Controllers
          } 
 
         [HttpDelete]
-        [Route("DeletePlayer")]
+        [Route("DeletePlayer/{id}")]
         public IActionResult DeletePlayer(int id)
         {
             var playerList=_context.Players.Find(id);
@@ -107,7 +107,7 @@ namespace dotnetapp.Controllers
             return Ok();
         }
         
-        [Route("PutTeam")]
+        [Route("PutTeam/{id}")]
         [HttpPut]            
         public IActionResult PutTeam(int id,Team team)
         {
@@ -127,7 +127,7 @@ namespace dotnetapp.Controllers
          }
 
         [HttpDelete]
-        [Route("DeleteTeam")]
+        [Route("DeleteTeam/{id}")]
         public IActionResult DeleteTeam(int id)
         {
             var teamList=_context.Teams.Find(id);

@@ -9,7 +9,7 @@ const routes: Routes = [
   {path:'getplayers', component:GetPlayerComponent},
   {path:'addplayers', component:AddplayerComponent},
   {path:'find/:id', component:GetplayerbyidComponent},
-  {path:'editplayer', component:PutplayerComponent}
+  {path:'editplayer/:id', component:PutplayerComponent}
 ];
 
 @NgModule({
