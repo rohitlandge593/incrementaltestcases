@@ -12,12 +12,17 @@ export class PutplayerComponent implements OnInit {
 
   constructor(private service:IplService,private route:Router) { }
 
+  isReady=false
   playerdata:IPlayer
   id:number
 
   editPlayer(p:IPlayer)
   {
-    const tid=
+    this.service.getPlayerById(this.id).subscribe((data:IPlayer)=>{
+      this.playerdata=data; 
+      this.isReady= true;
+      console.log(this.playerdata);
+    })
   }
 
   ngOnInit(): void {
