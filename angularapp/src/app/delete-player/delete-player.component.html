@@ -1,1 +1,45 @@
-<p>delete-player works!</p>
+<form #playerform="ngForm" (ngSubmit)="deletePlayer(playerdata)">
+    <div>
+        <label for="id" >Player ID:</label>
+        <input type="number" id="id" name="id" [(ngModel)]="id" />
+        <button type="submit">Submit</button>
+    </div>
+</form>
+<div class="container jumbotron col-4">
+<form #editplayerform="ngForm" (ngSubmit)="deletePlayerData(playerdata)" >
+<div *ngIf="isReady">
+    
+            <div class="form-group">
+                <label for="id">ID</label>
+                <input type="text" id="id" name="id" readonly [(ngModel)]="playerdata.id" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="text" id="age" name="age" readonly [(ngModel)]="playerdata.age" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" readonly [(ngModel)]="playerdata.name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="teamId">TeamId</label>
+                <input type="text" id="teamId" name="teamId" readonly [(ngModel)]="playerdata.teamId" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="category">Category</label>
+                <input type="text" id="category" name="category" readonly [(ngModel)]="playerdata.category" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="biddingPrice">BiddingPrice</label>
+                <input type="text" id="biddingPrice" name="biddingPrice" readonly [(ngModel)]="playerdata.biddingPrice" class="form-control">
+            </div>
+            <div>
+                <input type="submit" id="buttonId" class="btn btn-primary" value="Edit Player" />
+            </div>
+        
+        
+</div>
+
+
+</form>
+</div>
