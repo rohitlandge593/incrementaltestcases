@@ -51,4 +51,9 @@ export class IplService {
     return this.http.get<ITeam[]>(this.url+'/GetTeams')
   }
 
+  addTeams(teamdata:ITeam):Observable<ITeam>
+  {
+    return this.http.post<ITeam>(this.url+'/PostTeams',teamdata,this.httpOptions)
+  }
+
 }

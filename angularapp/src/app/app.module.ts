@@ -14,6 +14,7 @@ import { GetplayerbyidComponent } from './getplayerbyid/getplayerbyid.component'
 import { RouterModule } from '@angular/router';
 import { DeletePlayerComponent } from './delete-player/delete-player.component';
 import { GetTeamsComponent } from './get-teams/get-teams.component';
+import { AddteamsComponent } from './addteams/addteams.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { GetTeamsComponent } from './get-teams/get-teams.component';
     GetplayerbyidComponent,
     DeletePlayerComponent,
     GetTeamsComponent,
+    AddteamsComponent,
     
   ],
   imports: [
