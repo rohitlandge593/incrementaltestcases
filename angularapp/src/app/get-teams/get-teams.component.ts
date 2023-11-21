@@ -22,7 +22,7 @@ export class GetTeamsComponent implements OnInit {
     this.route.navigate(['/editTeams/'+id])
   }
 
-  deleteData(id:number):void 
+  deleteData(id:number,name:string):void 
   {
     this.route.navigate(['deleteTeams/'+id])
   }
