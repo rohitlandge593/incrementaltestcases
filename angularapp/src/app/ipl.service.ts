@@ -56,4 +56,9 @@ export class IplService {
     return this.http.post<ITeam>(this.url+'/PostTeams',teamdata,this.httpOptions)
   }
 
+  editTeams(id:number,teamdata:ITeam):Observable<ITeam>
+  {
+    return this.http.put<ITeam>(this.url+'/PutTeam/'+id,teamdata,this.httpOptions)
+  }
+
 }

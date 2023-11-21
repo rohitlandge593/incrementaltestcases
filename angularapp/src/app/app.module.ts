@@ -15,6 +15,7 @@ import { RouterModule } from '@angular/router';
 import { DeletePlayerComponent } from './delete-player/delete-player.component';
 import { GetTeamsComponent } from './get-teams/get-teams.component';
 import { AddteamsComponent } from './addteams/addteams.component';
+import { EditteamsComponent } from './editteams/editteams.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { AddteamsComponent } from './addteams/addteams.component';
     DeletePlayerComponent,
     GetTeamsComponent,
     AddteamsComponent,
+    EditteamsComponent,
     
   ],
   imports: [
