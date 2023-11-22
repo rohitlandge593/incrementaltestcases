@@ -2,16 +2,16 @@
 <form (ngSubmit)="saveData(playerdata)" #playerform="ngForm">
     <div class="form-group">
         <label for="age">Age</label>
-        <input [(ngModel)]="playerdata.Age" type="text" #age="ngModel" id="age" name="age" min="10" max="42" required  class="form-control">
+        <input [(ngModel)]="playerdata.Age" type="text" #age="ngModel" id="age" name="age"  class="form-control" minlength="10" maxlength="42" required >
     </div>
     <div *ngIf="age.invalid && (age.dirty || age.touched)" class="alert alert-danger">
         <div *ngIf="age.errors.required">
             Age is required.
         </div>
-        <div *ngIf="age.errors.min">
+        <div *ngIf="age.errors.minlength">
             Age is minimum 10.
         </div>
-        <div *ngIf="age.errors.max">
+        <div *ngIf="age.errors.maxlength">
             Maximum 42 is allowed.
         </div>
     </div>
