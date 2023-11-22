@@ -4,7 +4,15 @@
         <form #addteamForm="ngForm" (ngSubmit)="addTeamData(teamdata)">
         <div class="form-group">
             <label>Team Name</label>
-            <input type="text" name="name" id="name" [(ngModel)]="teamdata.Name" class="form-control">
+            <input type="text" #name="ngModel" name="name" id="name" [(ngModel)]="teamdata.Name" minlength="2" maxlength="50"  class="form-control">
+        </div>
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" colo>
+            <div *ngIf="name.errors.minlength">
+                Minimum 2 characters are required.
+            </div>
+            <div *ngIf="name.errors.maxlength">
+                Maximum 50 characters are allowed.
+            </div>
         </div>
         <div>
             <input type="submit" value="Add Team" />
