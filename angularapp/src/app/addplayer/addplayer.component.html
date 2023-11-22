@@ -1,10 +1,10 @@
 <div class="container jumbotron">
-<form (ngSubmit)="saveData(playerdata)" #playerform="ngForm">
+<form (ngSubmit)="saveData()" [formGroup]="playerform">
     <div class="form-group">
         <label for="age">Age</label>
-        <input [(ngModel)]="playerdata.Age" type="text" #age="ngModel" id="age" name="age"  class="form-control" minlength="10" maxlength="42" required >
+        <input formControlName="Age" type="text"  id="age" name="age"  class="form-control" minlength="10" maxlength="42" required >
     </div>
-    <div *ngIf="age.invalid && (age.dirty || age.touched)" class="alert alert-danger">
+    <!-- <div *ngIf="age.invalid && (age.dirty || age.touched)" class="alert alert-danger">
         <div *ngIf="age.errors.required">
             Age is required.
         </div>
@@ -13,26 +13,26 @@
         </div>
         <div *ngIf="age.errors.maxlength">
             Maximum 42 is allowed.
-        </div>
-    </div>
+        </div> -->
+    
     <div class="form-group">
         <label for="name">Name</label>
         <input [(ngModel)]="playerdata.Name" type="text" id="name" name="name" class="form-control">
     </div>
     <div class="form-group">
         <label for="teamId">Team Id</label>
-        <input [(ngModel)]="playerdata.TeamId" type="text" id="teamId" name="teamId" class="form-control">
+        <input formControlName="TeamId" type="text" id="teamId" name="teamId" class="form-control">
     </div>
     <div class="form-group">
         <label for="category">Category</label>
-        <input [(ngModel)]="playerdata.Category" type="text" id="category" name="category" class="form-control">
+        <input formControlName="Category" type="text" id="category" name="category" class="form-control">
     </div>
     <div class="form-group">
         <label for="biddingPrice">Bidding Price</label>
-        <input [(ngModel)]="playerdata.BiddingPrice" type="text" id="biddingPrice" name="biddingPrice" class="form-control">
+        <input formControlName="BiddingPrice" type="text" id="biddingPrice" name="biddingPrice" class="form-control">
     </div>
     <div>
-        <input type="submit" id="buttonId" class="btn btn-primary" value="Add Player" />
+        <input type="submit" id="buttonId" class="btn btn-info" value="Add Player" />
     </div>
 </form>
 </div>

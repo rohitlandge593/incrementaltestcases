@@ -8,7 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './menu/menu.component';
 import { AddplayerComponent } from './addplayer/addplayer.component';
 import { IplService } from './ipl.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PutplayerComponent } from './putplayer/putplayer.component';
 import { GetplayerbyidComponent } from './getplayerbyid/getplayerbyid.component';
 import { RouterModule } from '@angular/router';
@@ -38,6 +38,7 @@ import { DeleteteamsComponent } from './deleteteams/deleteteams.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule
   ],
   providers: [IplService],
