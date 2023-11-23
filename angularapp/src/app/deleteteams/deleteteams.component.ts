@@ -12,15 +12,26 @@ import { FormBuilder } from '@angular/forms';
 export class DeleteteamsComponent implements OnInit {
 
   teamdata:ITeam={TeamId:0,Name:''}
+  deleteForm:any
+  tid:any
+  str:any
 
   constructor(private fb:FormBuilder, private service:IplService,private route:Router,private ar:ActivatedRoute) {
-    const no=this.ar.snapshot.paramMap.get('id')
-    this.teamdata.TeamId=Number(no)
+    this.tid=this.ar.snapshot.paramMap.get('id')
+    this.str=this.ar.snapshot.paramMap.get('name')
+    this.teamdata.TeamId=Number(this.tid)
+    this.teamdata.Name=String(this.str)
+
+    this.ar.paramMap.subscribe(result=>{
+      result.get('id');
+       result.get('name');
+     })
+     this.deleteForm=this.fb.group({
+      TeamId:[this.tid],
+      Name:[this.str]
+     })
    }
-   deleteTeamForm=this.fb.group({
-    TeamId:[''],
-    Name:['']
-   })
+   
 
   deleteData(team:ITeam)
   {

@@ -3,11 +3,11 @@ ul
     display:-webkit-inline-flex
 }
 h1{
-    text-align: center; background-color: crimson; color: floralwhite;
+    text-align: center; background-color: crimson; color: floralwhite; height: 1in;
 }
 
 .menu-item{
-    margin: 5px;
+    margin: 10px;
     padding: 10px;
     background-color: black;
     display: inline-block;
