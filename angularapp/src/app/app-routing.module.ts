@@ -18,7 +18,7 @@ const routes: Routes = [
   {path:'deleteplayer/:id', component:DeletePlayerComponent},
   {path:'getTeams', component:GetTeamsComponent},
   {path:'addTeams', component:AddteamsComponent},
-  {path:'editTeams/:id', component:EditteamsComponent},
+  {path:'editTeams/:id/:name', component:EditteamsComponent},
   {path:'deleteTeams/:id',component:DeleteteamsComponent}
 ];
 

@@ -8,5 +8,11 @@ h1{
 
 .menu-item{
     margin: 5px;
-    padding:
+    padding: 10px;
+    background-color: black;
+    display: inline-block;
+}
+.menu-link{
+    text-decoration: wavy;
+    color: ghostwhite;
 }

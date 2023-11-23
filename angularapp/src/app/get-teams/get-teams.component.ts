@@ -16,10 +16,10 @@ export class GetTeamsComponent implements OnInit {
     this.service.getTeams().subscribe(data=>this.teamdata.push(...data))
   }
 
-  editData(id:number):void 
+  editData(id:number,name:string):void 
   {
     //console.log('Route'+id)
-    this.route.navigate(['/editTeams/'+id])
+    this.route.navigate(['/editTeams/'+id+'/'+name])
   }
 
   deleteData(id:number,name:string):void 

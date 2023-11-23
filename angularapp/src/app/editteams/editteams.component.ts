@@ -19,12 +19,28 @@ export class EditteamsComponent implements OnInit {
     
     
     const i=this.ar.snapshot.paramMap.get('id')
+    const str=this.ar.snapshot.paramMap.get('name')
     this.teamdata.TeamId=Number(i)
+    this.teamdata.Name=String(str)
    }
    editForm=this.fb.group({
-    TeamId:[''],
+    TeamId:[this.teamdata],
     Name:['']
    })
+
+   this.no=this.ar.snapshot.paramMap.get('id')
+    this.na=this.ar.snapshot.paramMap.get('name')
+    this.ar.paramMap.subscribe(result=>{
+     result.get('id');
+      result.get('name');
+    })
+    this.teamdata.TeamId=Number(this.no)
+   
+ 
+    this.deleteTeamForm=this.fb.group({
+      TeamId:[this.no],
+      Name:[this.na]
+     })
 
   editTeamData()
   {
