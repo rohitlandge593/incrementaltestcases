@@ -3,7 +3,7 @@
 <form #playerform="ngForm" (ngSubmit)="editPlayer(playerdata)">
     <div class="form-group">
         <label for="id" >Player ID:</label>
-        <input type="number" id="id" name="id" [(ngModel)]="id" />
+        <input type="number" id="id" name="id" [(ngModel)]="id" class="form-control"/>
         <button type="submit" id="editbutton">Submit</button>
     </div>
 </form>
