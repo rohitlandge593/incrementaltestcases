@@ -5,3 +5,13 @@ a:hover
     font-size: medium;
     font-style: italic;
 }
+body 
+{
+    margin: 50%;
+    padding:0;
+    background-image: url('assets/ipl.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+}

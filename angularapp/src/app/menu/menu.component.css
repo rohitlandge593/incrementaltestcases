@@ -3,5 +3,5 @@ ul
     display:-webkit-inline-flex
 }
 h1{
-    text-align: center;
+    text-align: center; background-color: crimson; color: floralwhite;
 }
