@@ -1,27 +1,29 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { GetPlayerComponent } from './get-player/get-player.component';
-import { AddplayerComponent } from './addplayer/addplayer.component';
-import { GetplayerbyidComponent } from './getplayerbyid/getplayerbyid.component';
-import { PutplayerComponent } from './putplayer/putplayer.component';
+import { PlayerComponent } from './player/player.component';
 import { DeletePlayerComponent } from './delete-player/delete-player.component';
+import { AddplayerComponent } from './addplayer/addplayer.component';
+import { EditplayerComponent } from './editplayer/editplayer.component';
 import { GetTeamsComponent } from './get-teams/get-teams.component';
-import { AddteamsComponent } from './addteams/addteams.component';
-import { EditteamsComponent } from './editteams/editteams.component';
-import { DeleteteamsComponent } from './deleteteams/deleteteams.component';
+import { CreateTeamComponent } from './create-team/create-team.component';
+import { DeleteTeamComponent } from './delete-team/delete-team.component';
 import { HomeComponent } from './home/home.component';
+import { AdminComponent } from './admin/admin.component';
+import { OrganizerComponent } from './organizer/organizer.component';
 
 const routes: Routes = [
-  {path:'', component:HomeComponent},
-  {path:'getplayers', component:GetPlayerComponent},
-  {path:'addplayers', component:AddplayerComponent},
-  {path:'find/:id', component:GetplayerbyidComponent},
-  {path:'editplayer/:id', component:PutplayerComponent},
-  {path:'deleteplayer/:id', component:DeletePlayerComponent},
-  {path:'getTeams', component:GetTeamsComponent},
-  {path:'addTeams', component:AddteamsComponent},
-  {path:'editTeams/:id/:name', component:EditteamsComponent},
-  {path:'deleteTeams/:id/:name',component:DeleteteamsComponent}
+  {path:'listPlayer',component:PlayerComponent},
+  {path:'deletePlayer/:id',component:DeletePlayerComponent},
+  {path:'addPlayer',component:AddplayerComponent},
+  {path:'editPlayer/:id',component:EditplayerComponent},
+  {path:'listTeams',component:GetTeamsComponent},
+  {path:'addTeams',component:CreateTeamComponent},
+  {path:'deleteTeam/:id',component:DeleteTeamComponent},
+  { path: '', component: HomeComponent },
+  { path: 'admin', component: AdminComponent },
+  { path: 'organizer', component: OrganizerComponent },
+ // { path: '/', component: HomeComponent }
+
 ];
 
 @NgModule({

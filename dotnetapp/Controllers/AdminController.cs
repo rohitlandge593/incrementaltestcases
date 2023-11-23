@@ -5,14 +5,13 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using dotnetapp.Models;
-using System.ComponentModel.DataAnnotations;
 
 namespace dotnetapp.Controllers
 {
 
     
-    [ApiController]
-    [Route("api/[controller]")]
+[ApiController]
+[Route("/[Controller]")]
     public class AdminController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -23,123 +22,116 @@ namespace dotnetapp.Controllers
         }
 
         [HttpGet]
-        
+        [Route("ListPlayers")]
         public IActionResult GetPlayers()
         {
-            var playerList = _context.Players.ToList();
-            return Ok(playerList);
+             var data=_context.Players.ToList();
+             if(data==null)
+             return NotFound();
+             return Ok(data);
         }
 
         [HttpGet]
-        [Route("{id}")]
-        public IActionResult GetPlayersById(int id)
+        [Route("GetPlayer/{id}")]
+        public IActionResult GetPlayerById(int id)
         {
-            var playerList= _context.Players.FirstOrDefault(a=>a.Id==id);
-            if(playerList!=null)
-            {
-                return Ok(playerList);
-            }
-            else{
-                return NotFound();
-            }
-        }
-        [HttpPost]
-        [Route("PostPlayers")]
-        public IActionResult PostPlayers(Player player)
-        {
-            
-            _context.Players.Add(player);
-            _context.SaveChanges();
-            return Ok();
+            var data=_context.Players.Find(id);
+            if(data==null)
+            return NotFound();
+            return Ok(data);
         }
 
-        [Route("PutPlayer/{id}")]
-        [HttpPut]            
-        public IActionResult PutPlayer(int id,Player player)
-        {
-            var playerList=_context.Players.Find(id);
-            if(playerList!=null)
-            {
-                playerList.Age=player.Age;
-                playerList.Name=player.Name;
-                playerList.TeamId=player.TeamId;
-                playerList.Category=player.Category;
-                playerList.BiddingPrice=player.BiddingPrice;
-                _context.Update(playerList);
-                _context.SaveChanges();
-                return Ok();
-            }
-            else  
-                return NotFound();            
-
-         } 
-
-        [HttpDelete]
-        [Route("DeletePlayer/{id}")]
-        public IActionResult DeletePlayer(int id)
-        {
-            var playerList=_context.Players.Find(id);
-            if(playerList!=null)
-            {
-                _context.Players.Remove(playerList);
-                _context.SaveChanges();
-                return Ok();
-            }
-            else
-                return NotFound();
+       
+        [HttpPut]
+       [Route("EditPlayer/{id}")]
+    public IActionResult PutPlayer(int id,Player editedPlayer)
+    {
+        try{
+        Player oldPlayer=_context.Players.Find(id);
+        oldPlayer.Name=editedPlayer.Name;
+        oldPlayer.Age=editedPlayer.Age;
+        oldPlayer.Category=editedPlayer.Category;
+        oldPlayer.BiddingPrice=editedPlayer.BiddingPrice;
+        oldPlayer.TeamId=editedPlayer.TeamId;
+        _context.SaveChanges();
+        return Ok();
         }
+        catch(Exception e)
+        {
+            return BadRequest();
+        }
+    }
 
+    [HttpDelete]
+    [Route("DeletePlayer/{id}")]
+    public IActionResult DeletePlayer(int id)
+    {
+        try{
+        Player player=_context.Players.Find(id);
+       _context.Players.Remove(player);
+       _context.SaveChanges();
+        return Ok();
+        }
+        catch(Exception e)
+        {
+            return BadRequest();
+        }
+    }
 
+    [HttpPost]
+    [Route("AddPlayer")]
+    public IActionResult PostPlayer(Player newPlayer)
+    {
+        if(ModelState.IsValid)
+        {
+        _context.Players.Add(newPlayer);
+        _context.SaveChanges();
+        return Created("Player Added",newPlayer);
+        }
+        return BadRequest("Cannot add Player");
+    }
 
-        [HttpGet]
-        [Route("GetTeams")]
+       [HttpGet]
+       [Route("ListTeams")]
         public IActionResult GetTeams()
         {
-            var teamList= _context.Teams.ToList();
-            return Ok(teamList);
+             var data=_context.Teams.ToList();
+             if(data==null)
+             return NotFound();
+             return Ok(data);
         }
+
         [HttpPost]
-        [Route("PostTeams")]
-        public IActionResult PostTeams(Team team)
+        [Route("AddTeam")]
+        public IActionResult AddTeam(Team newTeam)
         {
-            _context.Teams.Add(team);
+            _context.Teams.Add(newTeam);
+            _context.SaveChanges();
+            return Created("Team added",newTeam);
+
+        }
+
+        [HttpPut]
+        [Route("EditTeam/{id}")]
+        public IActionResult EditTeam(int id, Team newTeam)
+        {
+            Team oldTeam =_context.Teams.Find(id);
+            oldTeam.Name=newTeam.Name;
             _context.SaveChanges();
             return Ok();
         }
-        
-        [Route("PutTeam/{id}")]
-        [HttpPut]            
-        public IActionResult PutTeam(int id,Team team)
-        {
-            var teamList=_context.Teams.Find(id);
-            if(teamList!=null)
-            {
-                teamList.Name=team.Name;
-                _context.Update(teamList);
-                _context.SaveChanges();
-                return Ok();
-            }
-            else  
-                return NotFound();  
-
-            // db.Update(teamList         // db.SaveChanges();            
-
-         }
 
         [HttpDelete]
         [Route("DeleteTeam/{id}")]
         public IActionResult DeleteTeam(int id)
         {
-            var teamList=_context.Teams.Find(id);
-            if(teamList!=null)
-            {
-                _context.Teams.Remove(teamList);
-                _context.SaveChanges();
-                return Ok();
-            }
-            else
-                return NotFound();
+            Team teamToDelete=_context.Teams.Find(id);
+            _context.Teams.Remove(teamToDelete);
+            _context.SaveChanges();
+            return Ok();
         }
+
+        
 
         
     }

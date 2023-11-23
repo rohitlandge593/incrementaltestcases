@@ -1,49 +1,28 @@
-<div class="container col-4">
-    <div class="jumbotron">
-<form #playerform="ngForm" (ngSubmit)="deletePlayer(playerdata)">
-    <div class="form-group">
-        <label for="id" >Player ID:</label>
-        <input type="number" id="id" name="id" [(ngModel)]="id" class="form-control"/>
-        <button type="submit" id="deletebutton" class="btn btn-primary">Submit</button>
-    </div>
+<h3>Deleting Player</h3>
+<form (ngSubmit)="deleteData(playerdata)" #playerform="ngForm">
+<div>
+    <label for="id">ID</label>
+    <input type="text" id="id" name="id" [value]="playerdata.id" readonly>
+</div>
+<div>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" [value]="playerdata.name" readonly>
+</div>
+<div>
+    <label for="age">Age</label>
+    <input type="text" id="age" name="age" [value]="playerdata.age" readonly>
+</div>
+<div>
+    <label for="category">Category</label>
+    <input type="text" id="category" name="category" [value]="playerdata.category" readonly>
+</div>
+<div>
+    <label for="biddingPrice">Bidding Price</label>
+    <input type="text" id="biddingPrice" name="biddingPrice" [value]="playerdata.biddingPrice" readonly>
+</div>
+<div>
+    <label for="teamId">Team ID</label>
+    <input type="text" id="teamId" name="teamId" [value]="playerdata.teamId" readonly>
+</div>
+<input type="submit" class="btn btn-danger" value="Delete Player">
 </form>
-
-<form #editplayerform="ngForm" (ngSubmit)="deletePlayerData(playerdata)" >
-<div *ngIf="isReady">
-    
-            <div class="form-group">
-                <label for="id">ID</label>
-                <input type="text" id="id" name="id" readonly [(ngModel)]="playerdata.id" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="age">Age</label>
-                <input type="text" id="age" name="age" readonly [(ngModel)]="playerdata.age" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" readonly [(ngModel)]="playerdata.name" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="teamId">TeamId</label>
-                <input type="text" id="teamId" name="teamId" readonly [(ngModel)]="playerdata.teamId" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="category">Category</label>
-                <input type="text" id="category" name="category" readonly [(ngModel)]="playerdata.category" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="biddingPrice">BiddingPrice</label>
-                <input type="text" id="biddingPrice" name="biddingPrice" readonly [(ngModel)]="playerdata.biddingPrice" class="form-control">
-            </div>
-            <div>
-                <input type="submit" id="buttonId" class="btn btn-danger" value="Delete Player" />
-            </div>
-        
-        
-</div>
-
-
-</form>
-</div>
-</div>
-

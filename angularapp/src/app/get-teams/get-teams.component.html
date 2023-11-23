@@ -1,28 +1,19 @@
-<div class="container">
-    <div class="jumbotron">
-        <h3 style="text-align: center;">Teams</h3>
-        <table class="table">
-            <thead>
-                <tr>
-
-                    <th><b>TeamID</b></th>
-                    <th><b>TeamName</b></th>
-                    <th><b>Edit Actions</b></th>
-                    <th><b>Delete Action</b></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let m of teamdata">
-                    <td>{{m.teamId}}</td>
-                    <td>{{m.name}}</td>
-                    <td>
-                        <input type="submit" id="buttonteamId" (click)="editData(m.teamId,m.name)" value="Edit" class="btn btn-primary">
-                    </td>
-                    <td>
-                        <input type="submit" id="deletebutton" (click)="deleteData(m.teamId,m.name)" value="Delete" class="btn btn-danger">
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+<div class="container jumbotron">
+    <table class="table table-striped">
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let team of teams">
+            <td>{{team.id}}</td>
+            <td>{{team.name}}</td>
+            <!-- <td>{{team.maximumBudget}}</td> -->
+            <td>
+                <a [routerLink]="['/deleteTeam',team.id]">Delete</a>
+            </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

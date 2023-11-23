@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { IplService } from '../ipl.service';
-import { Router } from '@angular/router';
-import { IPlayer } from '../Model/iplayer';
+import { AdminService } from '../services/admin.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Player } from '../../models/player.model';
 
 @Component({
   selector: 'app-delete-player',
@@ -9,24 +9,23 @@ import { IPlayer } from '../Model/iplayer';
   styleUrls: ['./delete-player.component.css']
 })
 export class DeletePlayerComponent implements OnInit {
+playerdata={id:0,name:'',age:0,category:'',biddingPrice:0,teamId:0}
+id:number
 
-  constructor(private service:IplService,private route:Router) { }
+  constructor(private ps:AdminService,private router:Router,private ar:ActivatedRoute) { 
 
-  playerdata:IPlayer={Id:0,Age:0,Name:'',TeamId:0,Category:'',BiddingPrice:0}
-  isReady=false;
-  id:number;
-
-  deletePlayer(p:IPlayer)
-  {
-    this.service.getPlayerById(this.id).subscribe((data:IPlayer)=>{this.playerdata=data});
-    this.isReady=true;
+    const pid=this.ar.snapshot.paramMap.get('id')
+    this.id=Number(pid)
+   this.ps.getPlayerById(this.id).subscribe((data:any)=>{
+    this.playerdata=data
+   })
   }
-
-  deletePlayerData(player:IPlayer)
+  deleteData(data:any):void
   {
-    this.service.deletePlayer(this.id,player).subscribe(()=>{
-      alert("Record deleted")
-      this.route.navigate(['/getplayers'])
+    this.ps.deletePlayer(this.id).subscribe(()=>
+    {
+      alert('Player deleted!!')
+      this.router.navigate(['/listPlayer'])
     })
   }
 

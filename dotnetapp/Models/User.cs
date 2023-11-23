@@ -4,10 +4,9 @@ using System.Collections.Generic;
 
 namespace dotnetapp.Models
 {
-    public class User 
-    {
-        public int UserId{get;set;}
-        public string password{get;set;}
+    public class User{
+        public string UserName{get;set;}
+        public string Password{get;set;}
     }
 
 }
