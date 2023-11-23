@@ -1,9 +1,10 @@
-
+<div class="container col-4">
+    <div class="jumbotron">
 <form #playerform="ngForm" (ngSubmit)="getPlayerDetails(playerdata)">
-<div>
-    <label for="id">Player ID:</label>
-    <input type="number" id="id" name="id" [(ngModel)]="id"/>
-    <button type="submit">Submit</button>
+<div class="form-group">
+    <label class="custom-label" for="id">Player ID:</label>
+    <input type="number" id="id" name="id" [(ngModel)]="id" class="form-control"/>
+    <button type="submit" class="bottom-center-button">Submit</button>
 </div>
 </form>
 
@@ -19,3 +20,6 @@
     <p>BiddingPrice:{{playerdata.biddingPrice}}</p>
     </div>
 </div>
+</div>
+</div>
+
