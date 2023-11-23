@@ -17,8 +17,13 @@ namespace dotnetapp.Controllers
             _context = context;
         }
         [HttpGet]
-        [Route("Register")]
         public IActionResult Register()
+        {
+            return Ok();
+        }
+ 
+        [HttpPost]
+        public IActionResult Login()
         {
             return Ok();
         }

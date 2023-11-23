@@ -9,8 +9,10 @@ import { GetTeamsComponent } from './get-teams/get-teams.component';
 import { AddteamsComponent } from './addteams/addteams.component';
 import { EditteamsComponent } from './editteams/editteams.component';
 import { DeleteteamsComponent } from './deleteteams/deleteteams.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
+  {path:'', component:HomeComponent},
   {path:'getplayers', component:GetPlayerComponent},
   {path:'addplayers', component:AddplayerComponent},
   {path:'find/:id', component:GetplayerbyidComponent},

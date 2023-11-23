@@ -16,6 +16,17 @@ namespace dotnetapp.Controllers
         {
             this.db=context;
         }
+        [HttpGet]
+        public IActionResult Register()
+        {
+            return Ok();
+        }
+ 
+        [HttpPost]
+        public IActionResult Login()
+        {
+            return Ok();
+        }
         
 
         
