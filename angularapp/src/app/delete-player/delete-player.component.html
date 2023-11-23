@@ -4,7 +4,7 @@
     <div class="form-group">
         <label for="id" >Player ID:</label>
         <input type="number" id="id" name="id" [(ngModel)]="id" class="form-control"/>
-        <button type="submit">Submit</button>
+        <button type="submit" id="deletebutton" class="btn btn-primary">Submit</button>
     </div>
 </form>
 
@@ -36,7 +36,7 @@
                 <input type="text" id="biddingPrice" name="biddingPrice" readonly [(ngModel)]="playerdata.biddingPrice" class="form-control">
             </div>
             <div>
-                <input type="submit" id="buttonId" class="btn btn-primary" value="Delete Player" />
+                <input type="submit" id="buttonId" class="btn btn-danger" value="Delete Player" />
             </div>
         
         
