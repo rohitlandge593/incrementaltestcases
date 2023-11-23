@@ -24,7 +24,7 @@ export class GetTeamsComponent implements OnInit {
 
   deleteData(id:number,name:string):void 
   {
-    this.route.navigate(['deleteTeams/'+id])
+    this.route.navigate(['deleteTeams/'+id+'/'+name])
   }
 
   ngOnInit(): void {

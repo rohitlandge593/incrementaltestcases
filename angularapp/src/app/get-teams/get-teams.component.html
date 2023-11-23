@@ -16,7 +16,7 @@
                     <td>{{m.teamId}}</td>
                     <td>{{m.name}}</td>
                     <td>
-                        <input type="submit" id="buttonteamId" (click)="editData(m.teamId)" value="Edit" class="btn btn-primary">
+                        <input type="submit" id="buttonteamId" (click)="editData(m.teamId,m.name)" value="Edit" class="btn btn-primary">
                     </td>
                     <td>
                         <input type="submit" id="deletebutton" (click)="deleteData(m.teamId,m.name)" value="Delete" class="btn btn-danger">
